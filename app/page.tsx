@@ -1,13 +1,28 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Phone, MapPin, Clock, Star, Wrench, Shield, Zap, CheckCircle } from "lucide-react"
-import { useEffect, useState } from "react"
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  Phone,
+  MapPin,
+  Clock,
+  Star,
+  Wrench,
+  Shield,
+  Zap,
+  CheckCircle,
+} from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function HomePage() {
-  const [currentTestimonial, setCurrentTestimonial] = useState(0)
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
   const testimonials = [
     {
@@ -50,15 +65,15 @@ export default function HomePage() {
       text: "Excellent brake inspection service. They showed me exactly what they were checking and explained everything clearly.",
       author: "James W.",
     },
-  ]
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)
-    }, 4000) // Change every 4 seconds
+      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+    }, 4000); // Change every 4 seconds
 
-    return () => clearInterval(interval)
-  }, [testimonials.length])
+    return () => clearInterval(interval);
+  }, [testimonials.length]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -67,19 +82,33 @@ export default function HomePage() {
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Wrench className="h-8 w-8 text-primary" />
-            <h1 className="text-2xl font-bold text-foreground">QUICK LUBE & SMOG</h1>
+            <h1 className="text-2xl font-bold text-foreground">
+              QUICK LUBE & SMOG
+            </h1>
           </div>
           <nav className="hidden md:flex items-center gap-6">
-            <a href="#services" className="text-muted-foreground hover:text-foreground transition-colors">
+            <a
+              href="#services"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
               Services
             </a>
-            <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors">
+            <a
+              href="#about"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
               About
             </a>
-            <a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors">
+            <a
+              href="#contact"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
               Location
             </a>
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90" asChild>
+            <Button
+              className="bg-primary text-primary-foreground hover:bg-primary/90"
+              asChild
+            >
               <a href="tel:+15107576775">
                 <Phone className="h-4 w-4 mr-2" />
                 (510) 757-6775
@@ -92,20 +121,29 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-b from-muted/50 to-background">
         <div className="container mx-auto px-4 text-center">
-          <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">4.3 ⭐ (52 Reviews)</Badge>
-          <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6">QUICK LUBE & SMOG</h2>
+          <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
+            4.3 ⭐ (52 Reviews)
+          </Badge>
+          <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
+            QUICK LUBE & SMOG
+          </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Professional oil changes and safety inspections to keep your vehicle running safely and efficiently.
+            Professional oil changes and safety inspections to keep your vehicle
+            running safely and efficiently.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90" asChild>
+            <Button
+              size="lg"
+              className="bg-primary text-primary-foreground hover:bg-primary/90"
+              asChild
+            >
               <a href="tel:+15107576775">
                 <Phone className="h-4 w-4 mr-2" />
                 Call (510) 757-6775
               </a>
             </Button>
             <Button size="lg" variant="outline">
-              View Services
+              <a href="#services">Services</a>
             </Button>
           </div>
         </div>
@@ -115,9 +153,12 @@ export default function HomePage() {
       <section id="services" className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-foreground mb-4">Our Specialized Services</h3>
+            <h3 className="text-3xl font-bold text-foreground mb-4">
+              Our Specialized Services
+            </h3>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              We focus on essential maintenance services to keep your vehicle safe and reliable on the road.
+              We focus on essential maintenance services to keep your vehicle
+              safe and reliable on the road.
             </p>
           </div>
 
@@ -127,8 +168,12 @@ export default function HomePage() {
                 <div className="mx-auto mb-4 p-3 bg-primary/10 rounded-full w-fit">
                   <Zap className="h-8 w-8 text-primary" />
                 </div>
-                <CardTitle className="text-card-foreground">Oil Change Service</CardTitle>
-                <CardDescription>Quick and professional oil changes using premium oils</CardDescription>
+                <CardTitle className="text-card-foreground">
+                  Oil Change Service
+                </CardTitle>
+                <CardDescription>
+                  Quick and professional oil changes using premium oils
+                </CardDescription>
               </CardHeader>
               <CardContent className="flex flex-col flex-grow">
                 <ul className="space-y-2 text-sm text-muted-foreground flex-grow">
@@ -138,8 +183,13 @@ export default function HomePage() {
                   <li>• Service reminder sticker</li>
                 </ul>
                 <div className="mt-6">
-                  <div className="text-2xl font-bold text-primary">Call for Quote</div>
-                  <Button className="w-full mt-4 bg-primary text-primary-foreground hover:bg-primary/90" asChild>
+                  <div className="text-2xl font-bold text-primary">
+                    Call for Quote
+                  </div>
+                  <Button
+                    className="w-full mt-4 bg-primary text-primary-foreground hover:bg-primary/90"
+                    asChild
+                  >
                     <a href="tel:+15107576775">Call for Pricing</a>
                   </Button>
                 </div>
@@ -151,8 +201,12 @@ export default function HomePage() {
                 <div className="mx-auto mb-4 p-3 bg-primary/10 rounded-full w-fit">
                   <Shield className="h-8 w-8 text-primary" />
                 </div>
-                <CardTitle className="text-card-foreground">Brake & Light Inspection</CardTitle>
-                <CardDescription>Comprehensive brake system and lighting safety checks</CardDescription>
+                <CardTitle className="text-card-foreground">
+                  Brake & Light Inspection
+                </CardTitle>
+                <CardDescription>
+                  Comprehensive brake system and lighting safety checks
+                </CardDescription>
               </CardHeader>
               <CardContent className="flex flex-col flex-grow">
                 <ul className="space-y-2 text-sm text-muted-foreground flex-grow">
@@ -162,8 +216,13 @@ export default function HomePage() {
                   <li>• Complete lighting system test</li>
                 </ul>
                 <div className="mt-6">
-                  <div className="text-2xl font-bold text-primary">Call for Quote</div>
-                  <Button className="w-full mt-4 bg-primary text-primary-foreground hover:bg-primary/90" asChild>
+                  <div className="text-2xl font-bold text-primary">
+                    Call for Quote
+                  </div>
+                  <Button
+                    className="w-full mt-4 bg-primary text-primary-foreground hover:bg-primary/90"
+                    asChild
+                  >
                     <a href="tel:+15107576775">Schedule Inspection</a>
                   </Button>
                 </div>
@@ -175,8 +234,12 @@ export default function HomePage() {
                 <div className="mx-auto mb-4 p-3 bg-primary/10 rounded-full w-fit">
                   <Shield className="h-8 w-8 text-primary" />
                 </div>
-                <CardTitle className="text-card-foreground">Salvage Vehicle Inspection</CardTitle>
-                <CardDescription>Specialized brake & light inspection for salvage vehicles</CardDescription>
+                <CardTitle className="text-card-foreground">
+                  Salvage Vehicle Inspection
+                </CardTitle>
+                <CardDescription>
+                  Specialized brake & light inspection for salvage vehicles
+                </CardDescription>
               </CardHeader>
               <CardContent className="flex flex-col flex-grow">
                 <ul className="space-y-2 text-sm text-muted-foreground flex-grow">
@@ -186,8 +249,13 @@ export default function HomePage() {
                   <li>• Documentation for registration</li>
                 </ul>
                 <div className="mt-6">
-                  <div className="text-2xl font-bold text-primary">Call for Quote</div>
-                  <Button className="w-full mt-4 bg-primary text-primary-foreground hover:bg-primary/90" asChild>
+                  <div className="text-2xl font-bold text-primary">
+                    Call for Quote
+                  </div>
+                  <Button
+                    className="w-full mt-4 bg-primary text-primary-foreground hover:bg-primary/90"
+                    asChild
+                  >
                     <a href="tel:+15107576775">Schedule Inspection</a>
                   </Button>
                 </div>
@@ -199,8 +267,12 @@ export default function HomePage() {
                 <div className="mx-auto mb-4 p-3 bg-primary/10 rounded-full w-fit">
                   <CheckCircle className="h-8 w-8 text-primary" />
                 </div>
-                <CardTitle className="text-card-foreground">DMV Authorized SMOG Check</CardTitle>
-                <CardDescription>Official emissions testing for vehicle registration</CardDescription>
+                <CardTitle className="text-card-foreground">
+                  DMV Authorized SMOG Check
+                </CardTitle>
+                <CardDescription>
+                  Official emissions testing for vehicle registration
+                </CardDescription>
               </CardHeader>
               <CardContent className="flex flex-col flex-grow">
                 <ul className="space-y-2 text-sm text-muted-foreground flex-grow">
@@ -210,8 +282,13 @@ export default function HomePage() {
                   <li>• Required for registration renewal</li>
                 </ul>
                 <div className="mt-6">
-                  <div className="text-2xl font-bold text-primary">Call for Quote</div>
-                  <Button className="w-full mt-4 bg-primary text-primary-foreground hover:bg-primary/90" asChild>
+                  <div className="text-2xl font-bold text-primary">
+                    Call for Quote
+                  </div>
+                  <Button
+                    className="w-full mt-4 bg-primary text-primary-foreground hover:bg-primary/90"
+                    asChild
+                  >
                     <a href="tel:+15107576775">Schedule SMOG Test</a>
                   </Button>
                 </div>
@@ -225,7 +302,9 @@ export default function HomePage() {
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-foreground mb-4">Why Choose QUICK LUBE & SMOG?</h3>
+            <h3 className="text-3xl font-bold text-foreground mb-4">
+              Why Choose QUICK LUBE & SMOG?
+            </h3>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -233,9 +312,12 @@ export default function HomePage() {
               <div className="mx-auto mb-4 p-3 bg-primary/10 rounded-full w-fit">
                 <Star className="h-8 w-8 text-primary" />
               </div>
-              <h4 className="text-xl font-semibold text-foreground mb-2">ASE Certified</h4>
+              <h4 className="text-xl font-semibold text-foreground mb-2">
+                ASE Certified
+              </h4>
               <p className="text-muted-foreground">
-                Our technicians are certified by the National Institute for Automotive Service Excellence
+                Our technicians are certified by the National Institute for
+                Automotive Service Excellence
               </p>
             </div>
 
@@ -243,9 +325,12 @@ export default function HomePage() {
               <div className="mx-auto mb-4 p-3 bg-primary/10 rounded-full w-fit">
                 <Shield className="h-8 w-8 text-primary" />
               </div>
-              <h4 className="text-xl font-semibold text-foreground mb-2">Quality Guarantee</h4>
+              <h4 className="text-xl font-semibold text-foreground mb-2">
+                Quality Guarantee
+              </h4>
               <p className="text-muted-foreground">
-                All our work comes with a 12-month/12,000-mile warranty for your peace of mind
+                All our work comes with a 12-month/12,000-mile warranty for your
+                peace of mind
               </p>
             </div>
 
@@ -253,9 +338,12 @@ export default function HomePage() {
               <div className="mx-auto mb-4 p-3 bg-primary/10 rounded-full w-fit">
                 <Clock className="h-8 w-8 text-primary" />
               </div>
-              <h4 className="text-xl font-semibold text-foreground mb-2">Fast Service</h4>
+              <h4 className="text-xl font-semibold text-foreground mb-2">
+                Fast Service
+              </h4>
               <p className="text-muted-foreground">
-                Most services completed while you wait, with no appointment necessary
+                Most services completed while you wait, with no appointment
+                necessary
               </p>
             </div>
           </div>
@@ -263,18 +351,24 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 bg-background">
+      <section id="about" className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-foreground mb-4">What Our Customers Say</h3>
-            <p className="text-muted-foreground">Real reviews from our Google Maps listing</p>
+            <h3 className="text-3xl font-bold text-foreground mb-4">
+              What Our Customers Say
+            </h3>
+            <p className="text-muted-foreground">
+              Real reviews from our Google Maps listing
+            </p>
           </div>
 
           <div className="relative max-w-4xl mx-auto">
             <div className="overflow-hidden">
               <div
                 className="flex transition-transform duration-500 ease-in-out"
-                style={{ transform: `translateX(-${currentTestimonial * 100}%)` }}
+                style={{
+                  transform: `translateX(-${currentTestimonial * 100}%)`,
+                }}
               >
                 {testimonials.map((testimonial, index) => (
                   <div key={index} className="w-full flex-shrink-0 px-4">
@@ -282,11 +376,18 @@ export default function HomePage() {
                       <CardContent className="pt-6 text-center">
                         <div className="flex justify-center mb-4">
                           {[...Array(testimonial.rating)].map((_, i) => (
-                            <Star key={i} className="h-5 w-5 fill-primary text-primary" />
+                            <Star
+                              key={i}
+                              className="h-5 w-5 fill-primary text-primary"
+                            />
                           ))}
                         </div>
-                        <p className="text-muted-foreground mb-6 text-lg italic">"{testimonial.text}"</p>
-                        <div className="font-semibold text-foreground text-lg">- {testimonial.author}</div>
+                        <p className="text-muted-foreground mb-6 text-lg italic">
+                          "{testimonial.text}"
+                        </p>
+                        <div className="font-semibold text-foreground text-lg">
+                          - {testimonial.author}
+                        </div>
                       </CardContent>
                     </Card>
                   </div>
@@ -300,7 +401,9 @@ export default function HomePage() {
                   key={index}
                   onClick={() => setCurrentTestimonial(index)}
                   className={`w-3 h-3 rounded-full transition-colors ${
-                    index === currentTestimonial ? "bg-primary" : "bg-muted-foreground/30"
+                    index === currentTestimonial
+                      ? "bg-primary"
+                      : "bg-muted-foreground/30"
                   }`}
                 />
               ))}
@@ -313,15 +416,21 @@ export default function HomePage() {
       <section id="contact" className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-foreground mb-4">Visit Our Location</h3>
-            <p className="text-muted-foreground">No appointment necessary for most services</p>
+            <h3 className="text-3xl font-bold text-foreground mb-4">
+              Visit Our Location
+            </h3>
+            <p className="text-muted-foreground">
+              No appointment necessary for most services
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12">
             <div>
               <Card className="bg-card border-border">
                 <CardHeader>
-                  <CardTitle className="text-card-foreground">Contact Information</CardTitle>
+                  <CardTitle className="text-card-foreground">
+                    Contact Information
+                  </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="flex items-center gap-3">
@@ -333,7 +442,9 @@ export default function HomePage() {
                       >
                         (510) 757-6775
                       </a>
-                      <div className="text-sm text-muted-foreground">Call for service info</div>
+                      <div className="text-sm text-muted-foreground">
+                        Call for service info
+                      </div>
                     </div>
                   </div>
 
@@ -348,14 +459,18 @@ export default function HomePage() {
                       >
                         691 W Tennyson Rd
                       </a>
-                      <div className="text-sm text-muted-foreground">Hayward, CA 94544</div>
+                      <div className="text-sm text-muted-foreground">
+                        Hayward, CA 94544
+                      </div>
                     </div>
                   </div>
 
                   <div className="flex items-center gap-3">
                     <Clock className="h-5 w-5 text-primary" />
                     <div>
-                      <div className="font-semibold text-card-foreground">Business Hours</div>
+                      <div className="font-semibold text-card-foreground">
+                        Business Hours
+                      </div>
                       <div className="text-sm text-muted-foreground">
                         Mon-Sat: 9AM-5:30PM
                         <br />
@@ -370,8 +485,12 @@ export default function HomePage() {
             <div>
               <Card className="bg-card border-border">
                 <CardHeader>
-                  <CardTitle className="text-card-foreground">Find Us</CardTitle>
-                  <CardDescription>Located on W Tennyson Rd in Hayward</CardDescription>
+                  <CardTitle className="text-card-foreground">
+                    Find Us
+                  </CardTitle>
+                  <CardDescription>
+                    Located on W Tennyson Rd in Hayward
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="w-full h-[300px] rounded-md overflow-hidden">
@@ -398,7 +517,9 @@ export default function HomePage() {
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center gap-2 mb-4 md:mb-0">
               <Wrench className="h-6 w-6 text-primary" />
-              <span className="text-lg font-semibold text-card-foreground">QUICK LUBE & SMOG</span>
+              <span className="text-lg font-semibold text-card-foreground">
+                QUICK LUBE & SMOG
+              </span>
             </div>
             <div className="text-sm text-muted-foreground text-center md:text-right">
               <p>&copy; 2024 QUICK LUBE & SMOG. All rights reserved.</p>
@@ -408,5 +529,5 @@ export default function HomePage() {
         </div>
       </footer>
     </div>
-  )
+  );
 }
